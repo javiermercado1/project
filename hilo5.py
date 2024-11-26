@@ -643,6 +643,26 @@ def Hilo3():
     cv2.createTrackbar("U - S", "Trackbars", u_s, 255, nothing)
     cv2.createTrackbar("U - V", "Trackbars", 255, 255, nothing)  """
 
+    # Crear un diccionario para almacenar los valores de los trackbars para cada video
+    video_settings = {
+        "/videos/MVI_7863.MP4": (0, 57, 61, 255, 255, 255),
+        "/videos/MVI_9894.MP4": (0, 25, 206, 255, 255, 255),
+        "/videos/MVI_9896.MP4": (0, 22, 186, 255, 255, 255),
+        "/videos/MVI_9899.MP4": (13, 13, 210, 255, 255, 255),
+        "/videos/MVI_9902.MP4": (0, 0, 195, 255, 255, 255),
+    }
+
+    # Obtener los valores de los trackbars para el video actual
+    if video_path in video_settings:
+        l_h, l_s, l_v, u_h, u_s, u_v = video_settings[video_path]
+    else:
+        # Valores predeterminados si el video no está en el diccionario
+        l_h, l_s, l_v, u_h, u_s, u_v = (0, 49, 56, 255, 255, 255)
+    l_h, l_s, l_v, u_h, u_s, u_v 
+
+    #while not terminate_flag1:
+    #    cv2.waitKey(5)
+
     #while not terminate_flag1:
     #    cv2.waitKey(5)
 
